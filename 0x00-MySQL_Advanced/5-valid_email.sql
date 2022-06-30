@@ -3,7 +3,7 @@ CREATE TRIGGER reset_valid_email_on_update
     BEFORE UPDATE ON users
     FOR EACH ROW
     BEGIN
-        UPDATE users
-        SET valid_email = 1
-        WHERE id = NEW.id;
-END;
+        IF NEW.email <> OLD.email THEN
+            SET NEW.valid_email = 0;
+        END IF;
+    END;
