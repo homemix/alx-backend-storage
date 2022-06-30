@@ -2,7 +2,6 @@
 DELIMITER $$
 CREATE FUNCTION SafeDiv(IN a INT, IN b INT)
     RETURNS FLOAT
-    DETERMINISTIC
     BEGIN
         DECLARE answer FLOAT;
         IF b = 0 THEN
