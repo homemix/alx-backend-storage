@@ -16,6 +16,7 @@ class Cache:
         initialize the redis client
         """
         self._redis = redis.Redis()
+        self._redis.flushdb()
 
     def store(self, data) -> str:
         """
