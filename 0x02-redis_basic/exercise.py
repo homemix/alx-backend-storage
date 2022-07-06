@@ -46,4 +46,4 @@ class Cache:
         """
         get the data from the cache
         """
-        return int(self._redis.get(key))
+        return int(self._redis.get(key).decode('utf-8'))
